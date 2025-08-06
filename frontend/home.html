@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - FashionMatch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg main-header">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="home.html">
+                <i class="fas fa-heart me-2"></i>FashionMatch
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="home.html">
+                            <i class="fas fa-home me-2"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="match.html">
+                            <i class="fas fa-heart me-2"></i>Match
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">
+                            <i class="fas fa-users me-2"></i>Comunidad
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="market.html">
+                            <i class="fas fa-shopping-bag me-2"></i>Marketplace
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">
+                            <i class="fas fa-user me-2"></i>Mi Perfil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">
+                            <i class="fas fa-user-shield me-2"></i>Admin
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <span class="nav-link" id="welcomeUser">¡Hola, Usuario!</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="logout()">
+                            <i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Main Content -->
+        <div class="main-content p-4">
+            <div class="container-fluid">
+                <!-- Commercial Hero Section -->
+                <div class="commercial-hero">
+                    <h1 class="mb-3">Descubre las Últimas Tendencias</h1>
+                    <p class="lead">
+                        Explora nuevas prendas, conecta con la comunidad y encuentra tu estilo perfecto.
+                    </p>
+                    <a href="market.html" class="btn btn-primary btn-lg px-5 me-3">
+                        <i class="fas fa-shopping-bag me-2"></i>Ver Marketplace
+                    </a>
+                    <a href="match.html" class="btn btn-outline-primary btn-lg px-5">
+                        <i class="fas fa-heart me-2"></i>Encontrar Match
+                    </a>
+                </div>
+
+                <!-- Novedades en el Marketplace -->
+                <h2 class="section-title">Novedades en el Marketplace</h2>
+                <div class="row mb-5">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="content-card">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Vestido de Verano" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Vestido de Verano Floral</h5>
+                                <p class="card-text">Perfecto para los días soleados. Talla M, como nuevo.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="price-tag">€35</span>
+                                    <a href="market.html" class="btn btn-sm btn-outline-primary">Ver</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="content-card">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Zapatillas Urbanas" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Zapatillas Urbanas Blancas</h5>
+                                <p class="card-text">Estilo moderno y cómodo. Talla 39, poco uso.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="price-tag">€50</span>
+                                    <a href="market.html" class="btn btn-sm btn-outline-primary">Ver</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="content-card">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Bolso de Hombro" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Bolso de Hombro Vintage</h5>
+                                <p class="card-text">Pieza única con historia. Excelente estado.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="price-tag">€75</span>
+                                    <a href="market.html" class="btn btn-sm btn-outline-primary">Ver</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destacados de la Comunidad -->
+                <h2 class="section-title">Destacados de la Comunidad</h2>
+                <div class="row mb-5">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="content-card">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Outfit de María" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Outfit del Día de María</h5>
+                                <p class="card-text">"¡Nuevo look para la oficina! ¿Qué opinan? 💼✨"</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <small class="text-muted"><i class="fas fa-heart me-1"></i>24 likes</small>
+                                    <a href="blog.html" class="btn btn-sm btn-outline-primary">Ver Publicación</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="content-card">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Tips de Ana" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Tips para Cuidar tu Ropa</h5>
+                                <p class="card-text">Ana comparte sus secretos para mantener tus prendas impecables.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <small class="text-muted"><i class="fas fa-comment me-1"></i>8 comentarios</small>
+                                    <a href="blog.html" class="btn btn-sm btn-outline-primary">Leer Artículo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="content-card">
+                            <img src="/placeholder.svg?height=200&width=300" alt="Evento de Moda" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Resumen del Evento Fashion Week</h5>
+                                <p class="card-text">Las tendencias más impactantes de la pasarela.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <small class="text-muted"><i class="fas fa-users me-1"></i>156 vistas</small>
+                                    <a href="blog.html" class="btn btn-sm btn-outline-primary">Ver Más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action for Match -->
+                <div class="cta-section">
+                    <h2 class="mb-3">¿Listo para tu Próximo Match?</h2>
+                    <p>
+                        Desliza, conecta y encuentra personas con tu mismo estilo de moda.
+                        ¡Tu guardarropa y tu círculo social te lo agradecerán!
+                    </p>
+                    <a href="match.html" class="btn btn-light btn-lg">
+                        <i class="fas fa-heart me-2"></i>Empezar a Hacer Match
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>

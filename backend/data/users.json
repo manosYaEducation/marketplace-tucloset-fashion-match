@@ -1,0 +1,61 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "María",
+      "lastName": "González",
+      "email": "maria@email.com",
+      "age": 25,
+      "location": "Madrid, España",
+      "styles": ["elegante", "minimalista", "casual"],
+      "bio": "Amante de la moda sostenible y los looks minimalistas. Siempre buscando piezas únicas para mi guardarropa.",
+      "joinDate": "2024-01-15",
+      "stats": {
+        "matches": 24,
+        "items": 12,
+        "exchanges": 8,
+        "followers": 156,
+        "following": 89,
+        "rating": 4.8
+      }
+    },
+    {
+      "id": 2,
+      "firstName": "Ana",
+      "lastName": "Martín",
+      "email": "ana@email.com",
+      "age": 28,
+      "location": "Barcelona, España",
+      "styles": ["bohemio", "vintage", "casual"],
+      "bio": "Coleccionista de piezas vintage y amante del estilo bohemio. Me encanta mezclar épocas y crear looks únicos.",
+      "joinDate": "2024-02-03",
+      "stats": {
+        "matches": 18,
+        "items": 15,
+        "exchanges": 12,
+        "followers": 203,
+        "following": 145,
+        "rating": 4.9
+      }
+    },
+    {
+      "id": 3,
+      "firstName": "Laura",
+      "lastName": "Pérez",
+      "email": "laura@email.com",
+      "age": 23,
+      "location": "Valencia, España",
+      "styles": ["streetwear", "deportivo", "casual"],
+      "bio": "Fanática del streetwear y la moda urbana. Siempre al día con las últimas tendencias de la calle.",
+      "joinDate": "2024-03-10",
+      "stats": {
+        "matches": 31,
+        "items": 9,
+        "exchanges": 5,
+        "followers": 98,
+        "following": 67,
+        "rating": 4.7
+      }
+    }
+  ]
+}

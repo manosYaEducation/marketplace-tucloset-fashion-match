@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Vestido Elegante Negro",
+      "category": "vestidos",
+      "size": "M",
+      "condition": "como-nuevo",
+      "price": 45.00,
+      "type": "intercambio",
+      "description": "Hermoso vestido negro, perfecto para ocasiones especiales. Solo usado una vez.",
+      "userId": 1,
+      "userName": "María González",
+      "images": ["/placeholder.svg?height=300&width=250"],
+      "createdAt": "2024-01-20",
+      "views": 156,
+      "likes": 23
+    },
+    {
+      "id": 2,
+      "name": "Camisa Casual Azul",
+      "category": "camisas",
+      "size": "S",
+      "condition": "bueno",
+      "price": 25.00,
+      "type": "venta",
+      "description": "Camisa casual perfecta para el día a día. Muy cómoda y versátil.",
+      "userId": 2,
+      "userName": "Ana Martín",
+      "images": ["/placeholder.svg?height=300&width=250"],
+      "createdAt": "2024-01-22",
+      "views": 89,
+      "likes": 12
+    },
+    {
+      "id": 3,
+      "name": "Chaqueta Vintage",
+      "category": "chaquetas",
+      "size": "L",
+      "condition": "vintage",
+      "price": 60.00,
+      "type": "intercambio",
+      "description": "Chaqueta vintage auténtica de los años 80. Pieza única y muy especial.",
+      "userId": 3,
+      "userName": "Laura Pérez",
+      "images": ["/placeholder.svg?height=300&width=250"],
+      "createdAt": "2024-01-25",
+      "views": 234,
+      "likes": 45
+    }
+  ]
+}

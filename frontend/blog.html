@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad - FashionMatch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg main-header">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="home.html">
+                <i class="fas fa-heart me-2"></i>FashionMatch
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">
+                            <i class="fas fa-home me-2"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="match.html">
+                            <i class="fas fa-heart me-2"></i>Match
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html">
+                            <i class="fas fa-users me-2"></i>Comunidad
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="market.html">
+                            <i class="fas fa-shopping-bag me-2"></i>Marketplace
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">
+                            <i class="fas fa-user me-2"></i>Mi Perfil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">
+                            <i class="fas fa-user-shield me-2"></i>Admin
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <span class="nav-link" id="welcomeUser">¡Hola, Usuario!</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="logout()">
+                            <i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Main Content -->
+        <div class="main-content p-4">
+            <div class="container-fluid">
+                <div class="row mb-4">
+                    <div class="col">
+                        <h2 class="fw-bold text-primary">Comunidad Fashion</h2>
+                        <p class="text-muted">Comparte tu estilo y conecta con otros amantes de la moda</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- New Post -->
+                        <div class="post-card mb-4">
+                            <div class="post-content">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="/placeholder.svg?height=40&width=40" 
+                                         alt="Tu foto" class="rounded-circle me-3" style="width: 40px; height: 40px; object-fit: cover;">
+                                    <div class="flex-grow-1">
+                                        <textarea class="form-control border-0" placeholder="¿Qué outfit llevas hoy?" rows="2"></textarea>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <button class="btn btn-outline-primary btn-sm me-2">
+                                            <i class="fas fa-image me-1"></i>Foto
+                                        </button>
+                                        <button class="btn btn-outline-primary btn-sm">
+                                            <i class="fas fa-tag me-1"></i>Etiquetar
+                                        </button>
+                                    </div>
+                                    <button class="btn btn-primary">Publicar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Posts Feed -->
+                        <div class="post-card">
+                            <div class="post-header">
+                                <div class="d-flex align-items-center">
+                                    <img src="/placeholder.svg?height=50&width=50" 
+                                         alt="María" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
+                                    <div>
+                                        <h6 class="mb-0 fw-bold">María González</h6>
+                                        <small class="text-muted">Hace 2 horas</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <p class="mb-3">¡Nuevo look para la oficina! ¿Qué opinan? 💼✨</p>
+                                <img src="/placeholder.svg?height=300&width=400" 
+                                     alt="Outfit" class="img-fluid rounded mb-3">
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge bg-primary">#OfficeStyle</span>
+                                    <span class="badge bg-primary">#Elegante</span>
+                                    <span class="badge bg-primary">#OOTD</span>
+                                </div>
+                            </div>
+                            <div class="post-actions">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <button class="btn btn-link text-muted p-0 me-3">
+                                            <i class="fas fa-heart me-1"></i>24 likes
+                                        </button>
+                                        <button class="btn btn-link text-muted p-0 me-3">
+                                            <i class="fas fa-comment me-1"></i>8 comentarios
+                                        </button>
+                                        <button class="btn btn-link text-muted p-0">
+                                            <i class="fas fa-share me-1"></i>Compartir
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="post-card">
+                            <div class="post-header">
+                                <div class="d-flex align-items-center">
+                                    <img src="/placeholder.svg?height=50&width=50" 
+                                         alt="Ana" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
+                                    <div>
+                                        <h6 class="mb-0 fw-bold">Ana Martín</h6>
+                                        <small class="text-muted">Hace 5 horas</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <p class="mb-3">Intercambio exitoso con @LauraP 🔄 ¡Su vestido me queda perfecto!</p>
+                                <div class="row g-2 mb-3">
+                                    <div class="col-6">
+                                        <img src="/placeholder.svg?height=200&width=200" 
+                                             alt="Antes" class="img-fluid rounded">
+                                    </div>
+                                    <div class="col-6">
+                                        <img src="/placeholder.svg?height=200&width=200" 
+                                             alt="Después" class="img-fluid rounded">
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge bg-primary">#Intercambio</span>
+                                    <span class="badge bg-primary">#SustainableFashion</span>
+                                </div>
+                            </div>
+                            <div class="post-actions">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <button class="btn btn-link text-muted p-0 me-3">
+                                            <i class="fas fa-heart me-1"></i>18 likes
+                                        </button>
+                                        <button class="btn btn-link text-muted p-0 me-3">
+                                            <i class="fas fa-comment me-1"></i>5 comentarios
+                                        </button>
+                                        <button class="btn btn-link text-muted p-0">
+                                            <i class="fas fa-share me-1"></i>Compartir
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="post-card">
+                            <div class="post-header">
+                                <div class="d-flex align-items-center">
+                                    <img src="/placeholder.svg?height=50&width=50" 
+                                         alt="Carmen" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
+                                    <div>
+                                        <h6 class="mb-0 fw-bold">Carmen Silva</h6>
+                                        <small class="text-muted">Hace 1 día</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-content">
+                                <p class="mb-3">Tips para cuidar la ropa vintage 👗✨</p>
+                                <p class="text-muted mb-3">
+                                    1. Siempre lava a mano con agua fría<br>
+                                    2. Usa detergentes suaves<br>
+                                    3. Seca al aire libre, nunca en secadora<br>
+                                    4. Guarda en perchas de madera
+                                </p>
+                                <div class="d-flex flex-wrap gap-1 mb-3">
+                                    <span class="badge bg-primary">#VintageCare</span>
+                                    <span class="badge bg-primary">#Tips</span>
+                                    <span class="badge bg-primary">#Fashion</span>
+                                </div>
+                            </div>
+                            <div class="post-actions">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <button class="btn btn-link text-muted p-0 me-3">
+                                            <i class="fas fa-heart me-1"></i>32 likes
+                                        </button>
+                                        <button class="btn btn-link text-muted p-0 me-3">
+                                            <i class="fas fa-comment me-1"></i>12 comentarios
+                                        </button>
+                                        <button class="btn btn-link text-muted p-0">
+                                            <i class="fas fa-share me-1"></i>Compartir
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="col-lg-4">
+                        <!-- Trending Topics -->
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-header bg-primary text-white">
+                                <h6 class="mb-0">
+                                    <i class="fas fa-fire me-2"></i>Tendencias
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <p class="mb-1 fw-bold">#SustainableFashion</p>
+                                    <small class="text-muted">156 publicaciones</small>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="mb-1 fw-bold">#OOTD</p>
+                                    <small class="text-muted">89 publicaciones</small>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="mb-1 fw-bold">#VintageStyle</p>
+                                    <small class="text-muted">67 publicaciones</small>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="mb-1 fw-bold">#Intercambio</p>
+                                    <small class="text-muted">45 publicaciones</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Suggested Users -->
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-primary text-white">
+                                <h6 class="mb-0">
+                                    <i class="fas fa-user-plus me-2"></i>Usuarios Sugeridos
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="/placeholder.svg?height=40&width=40" 
+                                         alt="Usuario" class="rounded-circle me-3" style="width: 40px; height: 40px; object-fit: cover;">
+                                    <div class="flex-grow-1">
+                                        <p class="mb-0 fw-bold">Elena Ruiz</p>
+                                        <small class="text-muted">Estilo: Bohemio</small>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm">Seguir</button>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="/placeholder.svg?height=40&width=40" 
+                                         alt="Usuario" class="rounded-circle me-3" style="width: 40px; height: 40px; object-fit: cover;">
+                                    <div class="flex-grow-1">
+                                        <p class="mb-0 fw-bold">Sofia López</p>
+                                        <small class="text-muted">Estilo: Minimalista</small>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm">Seguir</button>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <img src="/placeholder.svg?height=40&width=40" 
+                                         alt="Usuario" class="rounded-circle me-3" style="width: 40px; height: 40px; object-fit: cover;">
+                                    <div class="flex-grow-1">
+                                        <p class="mb-0 fw-bold">Lucía Torres</p>
+                                        <small class="text-muted">Estilo: Vintage</small>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm">Seguir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/auth.js"></script>
+</body>
+</html>

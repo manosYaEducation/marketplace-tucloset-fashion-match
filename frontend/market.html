@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - FashionMatch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg main-header">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="home.html">
+                <i class="fas fa-heart me-2"></i>FashionMatch
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">
+                            <i class="fas fa-home me-2"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="match.html">
+                            <i class="fas fa-heart me-2"></i>Match
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">
+                            <i class="fas fa-users me-2"></i>Comunidad
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="market.html">
+                            <i class="fas fa-shopping-bag me-2"></i>Marketplace
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">
+                            <i class="fas fa-user me-2"></i>Mi Perfil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">
+                            <i class="fas fa-user-shield me-2"></i>Admin
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <span class="nav-link" id="welcomeUser">¡Hola, Usuario!</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="logout()">
+                            <i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Main Content -->
+        <div class="main-content p-4">
+            <div class="container-fluid">
+                <div class="row mb-4">
+                    <div class="col">
+                        <h2 class="fw-bold text-primary">Marketplace</h2>
+                        <p class="text-muted">Vende, intercambia y encuentra prendas únicas</p>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newItemModal">
+                            <i class="fas fa-plus me-2"></i>Publicar Prenda
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="row g-3">
+                                    <div class="col-md-3">
+                                        <select class="form-select">
+                                            <option>Todas las categorías</option>
+                                            <option>Vestidos</option>
+                                            <option>Camisas</option>
+                                            <option>Pantalones</option>
+                                            <option>Zapatos</option>
+                                            <option>Accesorios</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select class="form-select">
+                                            <option>Todas las tallas</option>
+                                            <option>XS</option>
+                                            <option>S</option>
+                                            <option>M</option>
+                                            <option>L</option>
+                                            <option>XL</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select class="form-select">
+                                            <option>Precio: Todos</option>
+                                            <option>€0 - €25</option>
+                                            <option>€25 - €50</option>
+                                            <option>€50 - €100</option>
+                                            <option>€100+</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select class="form-select">
+                                            <option>Venta e Intercambio</option>
+                                            <option>Solo Venta</option>
+                                            <option>Solo Intercambio</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="position-relative">
+                                <img src="/placeholder.svg?height=300&width=250" 
+                                     alt="Vestido" class="product-image w-100">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-success">Intercambio</span>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h6 class="fw-bold mb-2">Vestido Elegante Negro</h6>
+                                <p class="text-muted small mb-2">Talla M • Como nuevo</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price-tag">€45</span>
+                                    <button class="btn btn-outline-primary btn-sm">Ver detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="position-relative">
+                                <img src="/placeholder.svg?height=300&width=250" 
+                                     alt="Camisa" class="product-image w-100">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-primary">Venta</span>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h6 class="fw-bold mb-2">Camisa Casual Azul</h6>
+                                <p class="text-muted small mb-2">Talla S • Buen estado</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price-tag">€25</span>
+                                    <button class="btn btn-outline-primary btn-sm">Ver detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="position-relative">
+                                <img src="/placeholder.svg?height=300&width=250" 
+                                     alt="Chaqueta" class="product-image w-100">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-warning">Intercambio</span>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h6 class="fw-bold mb-2">Chaqueta Vintage</h6>
+                                <p class="text-muted small mb-2">Talla L • Vintage</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price-tag">€60</span>
+                                    <button class="btn btn-outline-primary btn-sm">Ver detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="position-relative">
+                                <img src="/placeholder.svg?height=300&width=250" 
+                                     alt="Zapatos" class="product-image w-100">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-primary">Venta</span>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h6 class="fw-bold mb-2">Zapatos de Diseñador</h6>
+                                <p class="text-muted small mb-2">Talla 38 • Excelente estado</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price-tag">€120</span>
+                                    <button class="btn btn-outline-primary btn-sm">Ver detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="position-relative">
+                                <img src="/placeholder.svg?height=300&width=250" 
+                                     alt="Vestido" class="product-image w-100">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-success">Intercambio</span>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h6 class="fw-bold mb-2">Vestido de Verano</h6>
+                                <p class="text-muted small mb-2">Talla M • Como nuevo</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price-tag">€35</span>
+                                    <button class="btn btn-outline-primary btn-sm">Ver detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="position-relative">
+                                <img src="/placeholder.svg?height=300&width=250" 
+                                     alt="Bolso" class="product-image w-100">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-primary">Venta</span>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h6 class="fw-bold mb-2">Bolso de Cuero</h6>
+                                <p class="text-muted small mb-2">Único • Buen estado</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price-tag">€80</span>
+                                    <button class="btn btn-outline-primary btn-sm">Ver detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="position-relative">
+                                <img src="/placeholder.svg?height=300&width=250" 
+                                     alt="Jeans" class="product-image w-100">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-warning">Intercambio</span>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h6 class="fw-bold mb-2">Jeans Clásicos</h6>
+                                <p class="text-muted small mb-2">Talla 28 • Muy buen estado</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price-tag">€40</span>
+                                    <button class="btn btn-outline-primary btn-sm">Ver detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="position-relative">
+                                <img src="/placeholder.svg?height=300&width=250" 
+                                     alt="Pañuelo" class="product-image w-100">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-primary">Venta</span>
+                                </div>
+                            </div>
+                            <div class="p-3">
+                                <h6 class="fw-bold mb-2">Pañuelo de Seda</h6>
+                                <p class="text-muted small mb-2">Único • Nuevo</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price-tag">€30</span>
+                                    <button class="btn btn-outline-primary btn-sm">Ver detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="row">
+                    <div class="col">
+                        <nav aria-label="Navegación de páginas">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Siguiente</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- New Item Modal -->
+    <div class="modal fade" id="newItemModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-plus me-2"></i>Publicar Nueva Prenda
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="newItemForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="itemName" class="form-label">Nombre de la prenda</label>
+                                <input type="text" class="form-control" id="itemName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="itemCategory" class="form-label">Categoría</label>
+                                <select class="form-select" id="itemCategory" required>
+                                    <option value="">Seleccionar categoría</option>
+                                    <option value="vestidos">Vestidos</option>
+                                    <option value="camisas">Camisas</option>
+                                    <option value="pantalones">Pantalones</option>
+                                    <option value="zapatos">Zapatos</option>
+                                    <option value="accesorios">Accesorios</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="itemSize" class="form-label">Talla</label>
+                                <select class="form-select" id="itemSize" required>
+                                    <option value="">Seleccionar talla</option>
+                                    <option value="xs">XS</option>
+                                    <option value="s">S</option>
+                                    <option value="m">M</option>
+                                    <option value="l">L</option>
+                                    <option value="xl">XL</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="itemCondition" class="form-label">Estado</label>
+                                <select class="form-select" id="itemCondition" required>
+                                    <option value="">Seleccionar estado</option>
+                                    <option value="nuevo">Nuevo</option>
+                                    <option value="como-nuevo">Como nuevo</option>
+                                    <option value="muy-bueno">Muy buen estado</option>
+                                    <option value="bueno">Buen estado</option>
+                                    <option value="usado">Usado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="itemPrice" class="form-label">Precio (€)</label>
+                                <input type="number" class="form-control" id="itemPrice" min="0" step="0.01">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="itemType" class="form-label">Tipo de transacción</label>
+                                <select class="form-select" id="itemType" required>
+                                    <option value="">Seleccionar tipo</option>
+                                    <option value="venta">Solo venta</option>
+                                    <option value="intercambio">Solo intercambio</option>
+                                    <option value="ambos">Venta e intercambio</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemDescription" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="itemDescription" rows="3" 
+                                      placeholder="Describe la prenda, su historia, por qué la vendes..."></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="itemImages" class="form-label">Imágenes</label>
+                            <input type="file" class="form-control" id="itemImages" multiple accept="image/*">
+                            <div class="form-text">Puedes subir hasta 5 imágenes</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">
+                        <i class="fas fa-upload me-2"></i>Publicar Prenda
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/auth.js"></script>
+</body>
+</html>
