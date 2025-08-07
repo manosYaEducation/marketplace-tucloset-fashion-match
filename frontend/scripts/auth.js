@@ -1,6 +1,6 @@
-// Simulación de autenticación y gestión de usuarios
+// Scripts para la gestión de usuarios y autenticación
 
-// Datos de usuarios simulados
+// Lista de usuarios simulados para la maqueta
 const mockUsers = [
     {
         id: 1,
@@ -22,7 +22,7 @@ const mockUsers = [
     }
 ];
 
-// Función para inicializar la autenticación
+// Función principal que se ejecuta al cargar la página
 function initAuth() {
     // Verificar si hay un usuario logueado
     const currentUser = getCurrentUser();
@@ -47,7 +47,7 @@ function getCurrentUser() {
     return userData ? JSON.parse(userData) : null;
 }
 
-// Actualizar UI para usuario logueado
+// Actualizar la interfaz para mostrar información del usuario logueado
 function updateUIForLoggedUser(user) {
     const welcomeElement = document.getElementById('welcomeUser');
     if (welcomeElement) {
@@ -65,15 +65,15 @@ function updateUIForLoggedUser(user) {
     }
 }
 
-// Función de login
+// Función para iniciar sesión - verifica credenciales y redirige según el rol
 function login(email, password) {
     const user = mockUsers.find(u => u.email === email && u.password === password);
     
     if (user) {
-        // Guardar usuario en localStorage
+        // Guardar usuario en localStorage para mantener la sesión
         localStorage.setItem('currentUser', JSON.stringify(user));
         
-        // Redirigir según el rol
+        // Redirigir según el rol del usuario
         if (user.role === 'admin') {
             window.location.href = 'admin.html';
         } else {
@@ -84,7 +84,7 @@ function login(email, password) {
     return false;
 }
 
-// Función de registro
+// Función para registrar nuevos usuarios
 function register(userData) {
     // Verificar si el email ya existe
     const existingUser = mockUsers.find(u => u.email === userData.email);
@@ -92,7 +92,7 @@ function register(userData) {
         return { success: false, message: 'El email ya está registrado' };
     }
     
-    // Crear nuevo usuario
+    // Crear nuevo usuario con datos del formulario
     const newUser = {
         id: mockUsers.length + 1,
         email: userData.email,
@@ -113,7 +113,7 @@ function register(userData) {
     return { success: true, user: newUser };
 }
 
-// Función de logout
+// Función para cerrar sesión - elimina datos del usuario y redirige
 function logout() {
     localStorage.removeItem('currentUser');
     window.location.href = 'index.html';
@@ -121,7 +121,7 @@ function logout() {
 
 // Event listeners para formularios
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar autenticación
+    // Inicializar autenticación al cargar la página
     initAuth();
     
     // Formulario de login
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Obtener estilos seleccionados
+            // Obtener estilos seleccionados del formulario
             const selectedStyles = Array.from(document.querySelectorAll('.tag-item.selected'))
                 .map(tag => tag.dataset.style);
             
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Manejo de selección de estilos
+        // Manejo de selección de estilos en el formulario de registro
         const styleSelector = document.getElementById('styleSelector');
         if (styleSelector) {
             styleSelector.addEventListener('click', function(e) {
@@ -189,13 +189,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Función para verificar si el usuario es admin
+// Función para verificar si el usuario es administrador
 function isAdmin() {
     const user = getCurrentUser();
     return user && user.role === 'admin';
 }
 
-// Proteger páginas de admin
+// Proteger páginas de admin - redirige si no es admin
 if (window.location.pathname.includes('admin.html') && !isAdmin()) {
     window.location.href = 'home.html';
 }

@@ -1,11 +1,11 @@
 <?php
-// Gestión del marketplace - simulación
+// Gestión del marketplace - simulación de API para productos
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
-// Datos simulados de productos
+// Lista de productos simulados para la maqueta
 $products = [
     [
         'id' => 1,
@@ -62,7 +62,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 switch ($method) {
     case 'GET':
         if (isset($_GET['id'])) {
-            // Obtener producto específico
+            // Obtener un producto específico por su ID
             $productId = intval($_GET['id']);
             $product = array_filter($products, function($p) use ($productId) {
                 return $p['id'] === $productId;
@@ -77,7 +77,7 @@ switch ($method) {
             // Obtener todos los productos con filtros opcionales
             $filteredProducts = $products;
             
-            // Aplicar filtros si existen
+            // Aplicar filtro por categoría si se especifica
             if (isset($_GET['category']) && $_GET['category'] !== '') {
                 $category = $_GET['category'];
                 $filteredProducts = array_filter($filteredProducts, function($p) use ($category) {
@@ -85,6 +85,7 @@ switch ($method) {
                 });
             }
             
+            // Aplicar filtro por talla si se especifica
             if (isset($_GET['size']) && $_GET['size'] !== '') {
                 $size = $_GET['size'];
                 $filteredProducts = array_filter($filteredProducts, function($p) use ($size) {
@@ -92,6 +93,7 @@ switch ($method) {
                 });
             }
             
+            // Aplicar filtro por tipo (venta/intercambio) si se especifica
             if (isset($_GET['type']) && $_GET['type'] !== '') {
                 $type = $_GET['type'];
                 $filteredProducts = array_filter($filteredProducts, function($p) use ($type) {
@@ -104,7 +106,7 @@ switch ($method) {
         break;
         
     case 'POST':
-        // Crear nuevo producto
+        // Crear un nuevo producto en el marketplace
         $input = json_decode(file_get_contents('php://input'), true);
         
         $newProduct = [
@@ -130,7 +132,7 @@ switch ($method) {
         break;
         
     case 'PUT':
-        // Actualizar producto
+        // Actualizar un producto existente
         $input = json_decode(file_get_contents('php://input'), true);
         $productId = intval($input['id']);
         
@@ -146,7 +148,7 @@ switch ($method) {
         break;
         
     case 'DELETE':
-        // Eliminar producto
+        // Eliminar un producto del marketplace
         $input = json_decode(file_get_contents('php://input'), true);
         $productId = intval($input['id']);
         

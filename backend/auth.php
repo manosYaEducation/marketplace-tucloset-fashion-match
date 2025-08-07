@@ -1,5 +1,5 @@
 <?php
-// Simulación de autenticación backend
+// Scripts para la gestión de usuarios y autenticación backend
 // En una aplicación real, esto se conectaría a una base de datos
 
 header('Content-Type: application/json');
@@ -7,7 +7,7 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
-// Datos simulados de usuarios
+// Lista de usuarios simulados para la maqueta
 $users = [
     [
         'id' => 1,
@@ -29,12 +29,13 @@ $users = [
     ]
 ];
 
+// Función para verificar las credenciales del usuario
 function authenticateUser($email, $password) {
     global $users;
     
     foreach ($users as $user) {
         if ($user['email'] === $email && password_verify($password, $user['password'])) {
-            // No devolver la contraseña
+            // No devolver la contraseña por seguridad
             unset($user['password']);
             return $user;
         }
@@ -43,17 +44,18 @@ function authenticateUser($email, $password) {
     return false;
 }
 
+// Función para registrar nuevos usuarios
 function registerUser($userData) {
     global $users;
     
-    // Verificar si el email ya existe
+    // Verificar si el email ya existe en el sistema
     foreach ($users as $user) {
         if ($user['email'] === $userData['email']) {
             return ['success' => false, 'message' => 'El email ya está registrado'];
         }
     }
     
-    // Crear nuevo usuario
+    // Crear nuevo usuario con los datos proporcionados
     $newUser = [
         'id' => count($users) + 1,
         'email' => $userData['email'],
@@ -68,13 +70,13 @@ function registerUser($userData) {
     // En una aplicación real, esto se guardaría en la base de datos
     $users[] = $newUser;
     
-    // No devolver la contraseña
+    // No devolver la contraseña por seguridad
     unset($newUser['password']);
     
     return ['success' => true, 'user' => $newUser];
 }
 
-// Manejar diferentes tipos de peticiones
+// Manejar diferentes tipos de peticiones HTTP
 $method = $_SERVER['REQUEST_METHOD'];
 
 if ($method === 'POST') {
@@ -83,6 +85,7 @@ if ($method === 'POST') {
     if (isset($input['action'])) {
         switch ($input['action']) {
             case 'login':
+                // Procesar solicitud de inicio de sesión
                 $user = authenticateUser($input['email'], $input['password']);
                 if ($user) {
                     echo json_encode(['success' => true, 'user' => $user]);
@@ -92,6 +95,7 @@ if ($method === 'POST') {
                 break;
                 
             case 'register':
+                // Procesar solicitud de registro
                 $result = registerUser($input);
                 echo json_encode($result);
                 break;

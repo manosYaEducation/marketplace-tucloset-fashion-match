@@ -1,3 +1,4 @@
+/* Variables de colores principales de la aplicación */
 :root {
     --primary-color: #ec407a;
     --primary-light: #f8bbd0;
@@ -8,11 +9,13 @@
     --text-light: #6c757d;
 }
 
+/* Estilos base del cuerpo de la página */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-dark);
 }
 
+/* Estilos para botones primarios */
 .btn-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
@@ -25,6 +28,7 @@ body {
     transform: translateY(-2px);
 }
 
+/* Estilos para botones con borde */
 .btn-outline-primary {
     color: var(--primary-color);
     border-color: var(--primary-color);
@@ -35,6 +39,7 @@ body {
     border-color: var(--primary-color);
 }
 
+/* Clases de utilidad para colores */
 .text-primary {
     color: var(--primary-color) !important;
 }
@@ -43,10 +48,12 @@ body {
     background-color: var(--primary-color) !important;
 }
 
+/* Estilos para el logo de la marca */
 .navbar-brand {
     font-size: 1.5rem;
 }
 
+/* Sección hero principal de la landing page */
 .hero-section {
     background: linear-gradient(135deg, var(--accent-color) 0%, #ffffff 100%);
     min-height: 100vh;
@@ -54,6 +61,7 @@ body {
     align-items: center;
 }
 
+/* Sección hero comercial para el dashboard */
 .commercial-hero {
     background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent-color) 100%);
     padding: 4rem 0;
@@ -77,6 +85,7 @@ body {
     margin: 0 auto 2rem auto;
 }
 
+/* Estilos para títulos de sección */
 .section-title {
     font-size: 2rem;
     font-weight: bold;
@@ -85,6 +94,7 @@ body {
     text-align: center;
 }
 
+/* Tarjetas de características con efecto hover */
 .feature-card {
     background: white;
     border-radius: 15px;
@@ -101,7 +111,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Estilos para formularios */
+/* Estilos para formularios de login y registro */
 .form-container {
     background: linear-gradient(135deg, var(--accent-color) 0%, #ffffff 100%);
     min-height: 100vh;
@@ -121,7 +131,7 @@ body {
     box-shadow: 0 0 0 0.2rem rgba(236, 64, 122, 0.25);
 }
 
-/* Estilos para tags */
+/* Estilos para selector de tags/estilos */
 .tag-selector {
     display: flex;
     flex-wrap: wrap;
@@ -149,7 +159,7 @@ body {
     border-color: var(--primary-dark);
 }
 
-/* Estilos para el nuevo Header */
+/* Estilos para el header principal de navegación */
 .main-header {
     background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: white;
@@ -190,7 +200,7 @@ body {
     padding-top: 2rem !important; /* Asegura espacio debajo del header */
 }
 
-/* Estilos para cards de match */
+/* Estilos para las tarjetas de match tipo Tinder */
 .match-card {
     background: white;
     border-radius: 20px;
@@ -205,6 +215,7 @@ body {
     transform: scale(1.02);
 }
 
+/* Botones de acción para match (like/reject) */
 .match-actions {
     position: absolute;
     bottom: 20px;
@@ -241,7 +252,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Estilos para el blog */
+/* Estilos para las tarjetas de posts del blog */
 .post-card {
     background: white;
     border-radius: 15px;
@@ -265,7 +276,7 @@ body {
     background-color: #f8f9fa;
 }
 
-/* Estilos para el marketplace */
+/* Estilos para las tarjetas de productos del marketplace */
 .product-card {
     background: white;
     border-radius: 15px;
@@ -283,6 +294,7 @@ body {
     object-fit: cover;
 }
 
+/* Etiqueta de precio para productos */
 .price-tag {
     background-color: var(--primary-color);
     color: white;
@@ -291,7 +303,7 @@ body {
     font-weight: bold;
 }
 
-/* Estilos para estadísticas */
+/* Estilos para las tarjetas de estadísticas del dashboard */
 .stat-card {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: white;
@@ -312,7 +324,7 @@ body {
     opacity: 0.9;
 }
 
-/* Responsive */
+/* Estilos responsive para dispositivos móviles */
 @media (max-width: 768px) {
     .hero-section h1 {
         font-size: 2.5rem;
@@ -332,6 +344,7 @@ body {
     }
 }
 
+/* Estilos para las tarjetas de contenido general */
 .content-card {
     background: white;
     border-radius: 15px;
@@ -365,6 +378,7 @@ body {
     font-size: 0.9rem;
 }
 
+/* Sección de llamada a la acción (CTA) */
 .cta-section {
     background: linear-gradient(45deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: white;

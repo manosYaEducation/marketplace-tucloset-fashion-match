@@ -8,7 +8,7 @@ const mockProfiles = [
         age: 25,
         styles: ['Elegante', 'Minimalista', 'Casual'],
         bio: 'Amante de la moda sostenible y los looks minimalistas. Siempre buscando piezas únicas para mi guardarropa.',
-        image: '/placeholder.svg?height=400&width=300'
+        image: '/tu_closet_muriel/assets/maria_g.jpg'
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ const mockProfiles = [
         age: 28,
         styles: ['Bohemio', 'Vintage', 'Casual'],
         bio: 'Coleccionista de piezas vintage y amante del estilo bohemio. Me encanta mezclar épocas y crear looks únicos.',
-        image: '/placeholder.svg?height=400&width=300'
+        image: '/tu_closet_muriel/assets/ana_m.jpg'
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const mockProfiles = [
         age: 23,
         styles: ['Streetwear', 'Deportivo', 'Casual'],
         bio: 'Fanática del streetwear y la moda urbana. Siempre al día con las últimas tendencias de la calle.',
-        image: '/placeholder.svg?height=400&width=300'
+        image: '/tu_closet_muriel/assets/laura_p.jpg'
     },
     {
         id: 4,
@@ -32,15 +32,17 @@ const mockProfiles = [
         age: 30,
         styles: ['Elegante', 'Romántico', 'Vintage'],
         bio: 'Ejecutiva de día, romántica de noche. Me encanta la moda clásica con toques modernos.',
-        image: '/placeholder.svg?height=400&width=300'
+        image: '/tu_closet_muriel/assets/carmen_s.jpg'
     }
 ];
 
+// Variables para controlar el estado del match
 let currentProfileIndex = 0;
 let likedProfiles = [];
 let passedProfiles = [];
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Cargar el primer perfil al abrir la página
     loadCurrentProfile();
     
     // Event listeners para los botones de match
@@ -68,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Función para cargar y mostrar el perfil actual
 function loadCurrentProfile() {
     if (currentProfileIndex >= mockProfiles.length) {
         showNoMoreProfiles();
@@ -76,12 +79,12 @@ function loadCurrentProfile() {
     
     const profile = mockProfiles[currentProfileIndex];
     
-    // Actualizar la información del perfil
+    // Actualizar la información del perfil en la interfaz
     document.getElementById('userName').textContent = profile.name;
     document.getElementById('userAge').textContent = `${profile.age} años`;
     document.getElementById('userBio').textContent = profile.bio;
     
-    // Actualizar estilos
+    // Actualizar estilos del perfil
     const stylesContainer = document.getElementById('userStyles');
     stylesContainer.innerHTML = '';
     profile.styles.forEach(style => {
@@ -91,7 +94,7 @@ function loadCurrentProfile() {
         stylesContainer.appendChild(badge);
     });
     
-    // Actualizar imagen
+    // Actualizar imagen del perfil
     const profileImage = document.querySelector('#currentCard img');
     if (profileImage) {
         profileImage.src = profile.image;
@@ -99,11 +102,12 @@ function loadCurrentProfile() {
     }
 }
 
+// Función para rechazar un perfil (botón X)
 function rejectMatch() {
     const profile = mockProfiles[currentProfileIndex];
     passedProfiles.push(profile);
     
-    // Animación de rechazo
+    // Animación de rechazo hacia la izquierda
     animateCardExit('left');
     
     setTimeout(() => {
@@ -111,6 +115,7 @@ function rejectMatch() {
     }, 300);
 }
 
+// Función para dar like a un perfil (botón corazón)
 function likeMatch() {
     const profile = mockProfiles[currentProfileIndex];
     likedProfiles.push(profile);
@@ -118,7 +123,7 @@ function likeMatch() {
     // Simular match (30% de probabilidad)
     const isMatch = Math.random() < 0.3;
     
-    // Animación de like
+    // Animación de like hacia la derecha
     animateCardExit('right');
     
     setTimeout(() => {
@@ -129,6 +134,7 @@ function likeMatch() {
     }, 300);
 }
 
+// Función para pasar al siguiente perfil
 function nextProfile() {
     currentProfileIndex++;
     
@@ -142,6 +148,7 @@ function nextProfile() {
     loadCurrentProfile();
 }
 
+// Función para animar la salida de la tarjeta
 function animateCardExit(direction) {
     const matchCard = document.getElementById('currentCard');
     if (!matchCard) return;
@@ -152,6 +159,7 @@ function animateCardExit(direction) {
     matchCard.style.opacity = '0';
 }
 
+// Función para mostrar el modal cuando hay match
 function showMatchModal(profile) {
     const modal = document.getElementById('matchModal');
     const matchName = document.getElementById('matchName');
@@ -166,6 +174,7 @@ function showMatchModal(profile) {
     }
 }
 
+// Función para mostrar mensaje cuando no hay más perfiles
 function showNoMoreProfiles() {
     const matchCard = document.getElementById('currentCard');
     if (matchCard) {
@@ -231,26 +240,26 @@ function handleTouchEnd(e) {
 }
 
 // Funciones para manejo de mouse (similar a touch)
-function handleMouseStart(e) {
-    startX = e.clientX;
-    cardBeingDragged = true;
-}
+// function handleMouseStart(e) {
+//     startX = e.clientX;
+//     cardBeingDragged = true;
+// }
 
-function handleMouseMove(e) {
-    if (!cardBeingDragged) return;
+// function handleMouseMove(e) {
+//     if (!cardBeingDragged) return;
     
-    currentX = e.clientX;
-    const diffX = currentX - startX;
-    const matchCard = document.getElementById('currentCard');
+//     currentX = e.clientX;
+//     const diffX = currentX - startX;
+//     const matchCard = document.getElementById('currentCard');
     
-    if (matchCard) {
-        const rotation = diffX * 0.1;
-        const opacity = 1 - Math.abs(diffX) / 300;
-        matchCard.style.transform = `translateX(${diffX}px) rotate(${rotation}deg)`;
-        matchCard.style.opacity = Math.max(opacity, 0.3);
-    }
-}
+//     if (matchCard) {
+//         const rotation = diffX * 0.1;
+//         const opacity = 1 - Math.abs(diffX) / 300;
+//         matchCard.style.transform = `translateX(${diffX}px) rotate(${rotation}deg)`;
+//         matchCard.style.opacity = Math.max(opacity, 0.3);
+//     }
+// }
 
-function handleMouseEnd(e) {
-    handleTouchEnd(e);
-}
+// function handleMouseEnd(e) {
+//     handleTouchEnd(e);
+// }
